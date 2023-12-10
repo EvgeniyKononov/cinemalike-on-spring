@@ -33,7 +33,7 @@ public class GenreController {
     }
 
     @GetMapping
-    public OutGenreDto getGenreByIdy(@RequestParam long id) {
+    public OutGenreDto getGenreById(@RequestParam long id) {
         Genre genre = genreService.findById(id);
         return dtoMapper.map(genre, getOutFilmsDtoByGenreId(genre.getId()));
     }
@@ -47,7 +47,7 @@ public class GenreController {
     }
 
     @PatchMapping
-    public OutGenreDto createGenre(@RequestParam long id, @RequestBody InGenreDto inGenreDto) {
+    public OutGenreDto updateGenre(@RequestParam long id, @RequestBody InGenreDto inGenreDto) {
         Genre oldGenre = genreService.findById(id);
         Genre newGenre = dtoMapper.toNewEntity(inGenreDto);
         newGenre = genreService.update(oldGenre, newGenre);

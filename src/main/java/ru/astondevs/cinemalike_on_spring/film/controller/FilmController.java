@@ -51,7 +51,7 @@ public class FilmController {
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteUser(@RequestParam long id) {
+    public void deleteFilm(@RequestParam long id) {
         filmService.deleteById(id);
     }
 }

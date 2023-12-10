@@ -54,4 +54,5 @@ public class OutUserDto {
     public int hashCode() {
         return Objects.hash(id, name, filmLikes);
     }
+
 }

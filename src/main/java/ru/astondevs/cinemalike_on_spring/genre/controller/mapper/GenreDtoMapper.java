@@ -15,6 +15,7 @@ public interface GenreDtoMapper {
     @Mapping(source = "genre.name", target = "name")
     OutGenreDto map(Genre genre, List<OutFilmDto> films);
 
+    @Mapping(source = "genreName", target = "name")
     OutGenreDto map(String genreName, List<OutFilmDto> films);
 
     Genre toNewEntity(InGenreDto dto);
